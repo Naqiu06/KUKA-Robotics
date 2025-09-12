@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Folder OriginalName="" CurrentName="" Type="None" OriginalPath="">
+  <Folder OriginalName="KRC:" CurrentName="KRC:" Type="None" OriginalPath="KRC:\">
+    <Folder OriginalName="R1" CurrentName="R1" Type="None" OriginalPath="KRC:\R1">
+      <Folder OriginalName="Mada" CurrentName="Mada" Type="None" OriginalPath="KRC:\R1\Mada">
+        <File OriginalName="$machine.dat" CurrentName="$machine.dat" Type="None" OriginalPath="KRC:\R1\Mada\$machine.dat" OriginalChecksum="8fe5f6d5980753fa1c7e5226879ffb6f" CurrentChecksum="8fe5f6d5980753fa1c7e5226879ffb6f" />
+        <File OriginalName="$robcor.dat" CurrentName="$robcor.dat" Type="None" OriginalPath="KRC:\R1\Mada\$robcor.dat" OriginalChecksum="aa5c6743a13ad5563eb002f2b5516238" CurrentChecksum="aa5c6743a13ad5563eb002f2b5516238" />
+      </Folder>
+      <Folder OriginalName="Program" CurrentName="Program" Type="None" OriginalPath="KRC:\R1\Program">
+        <File OriginalName="honai.dat" CurrentName="honai.dat" Type="None" OriginalPath="KRC:\R1\Program\honai.dat" OriginalChecksum="141b8319a8eff18374b07064da821d5f" CurrentChecksum="141b8319a8eff18374b07064da821d5f" />
+        <File OriginalName="honai.src" CurrentName="honai.src" Type="None" OriginalPath="KRC:\R1\Program\honai.src" OriginalChecksum="263b22ec8615991126f424dad7a93e5b" CurrentChecksum="263b22ec8615991126f424dad7a93e5b" />
+        <File OriginalName="masref_user.dat" CurrentName="masref_user.dat" Type="None" OriginalPath="KRC:\R1\Program\masref_user.dat" OriginalChecksum="9cf0a84f8b0ea7780a8c680daf5a0941" CurrentChecksum="9cf0a84f8b0ea7780a8c680daf5a0941" />
+        <File OriginalName="masref_user.src" CurrentName="masref_user.src" Type="None" OriginalPath="KRC:\R1\Program\masref_user.src" OriginalChecksum="5aa3eafc2df5d90f12b17ba9a0e4ec0d" CurrentChecksum="5aa3eafc2df5d90f12b17ba9a0e4ec0d" />
+        <File OriginalName="tm_useraction.dat" CurrentName="tm_useraction.dat" Type="None" OriginalPath="KRC:\R1\Program\tm_useraction.dat" OriginalChecksum="18c6b361d839741a79449d5f21284628" CurrentChecksum="18c6b361d839741a79449d5f21284628" />
+        <File OriginalName="tm_useraction.src" CurrentName="tm_useraction.src" Type="None" OriginalPath="KRC:\R1\Program\tm_useraction.src" OriginalChecksum="cef50585c77486675eba0709a3a07741" CurrentChecksum="cef50585c77486675eba0709a3a07741" />
+      </Folder>
+      <Folder OriginalName="System" CurrentName="System" Type="None" OriginalPath="KRC:\R1\System">
+        <File OriginalName="$config.dat" CurrentName="$config.dat" Type="None" OriginalPath="KRC:\R1\System\$config.dat" OriginalChecksum="856f26652335a67066baf88b8e6bad43" CurrentChecksum="856f26652335a67066baf88b8e6bad43" />
+        <File OriginalName="bas.src" CurrentName="bas.src" Type="None" OriginalPath="KRC:\R1\System\bas.src" OriginalChecksum="d680061592f5d6e1cf6f3af19b16fda9" CurrentChecksum="d680061592f5d6e1cf6f3af19b16fda9" />
+        <File OriginalName="ir_stopm.src" CurrentName="ir_stopm.src" Type="None" OriginalPath="KRC:\R1\System\ir_stopm.src" OriginalChecksum="8280d71d4908bdf0453ee48bdfb6bf24" CurrentChecksum="8280d71d4908bdf0453ee48bdfb6bf24" />
+        <File OriginalName="masref_main.dat" CurrentName="masref_main.dat" Type="None" OriginalPath="KRC:\R1\System\masref_main.dat" OriginalChecksum="c2bfba845f618434bfc955b38db4e674" CurrentChecksum="c2bfba845f618434bfc955b38db4e674" />
+        <File OriginalName="masref_main.src" CurrentName="masref_main.src" Type="None" OriginalPath="KRC:\R1\System\masref_main.src" OriginalChecksum="a63c6d3afacecd42c5b0301c5f1bd05b" CurrentChecksum="a63c6d3afacecd42c5b0301c5f1bd05b" />
+        <File OriginalName="msglib.dat" CurrentName="msglib.dat" Type="None" OriginalPath="KRC:\R1\System\msglib.dat" OriginalChecksum="5e0b53aef0d6030ead83171e939437ff" CurrentChecksum="5e0b53aef0d6030ead83171e939437ff" />
+        <File OriginalName="msglib.src" CurrentName="msglib.src" Type="None" OriginalPath="KRC:\R1\System\msglib.src" OriginalChecksum="7e261d1a84601e444d3cfd80e71c6122" CurrentChecksum="7e261d1a84601e444d3cfd80e71c6122" />
+        <File OriginalName="sps.sub" CurrentName="sps.sub" Type="None" OriginalPath="KRC:\R1\System\sps.sub" OriginalChecksum="0953f27ac199ed55e1c88688652f999a" CurrentChecksum="0953f27ac199ed55e1c88688652f999a" />
+        <File OriginalName="tm_bib.dat" CurrentName="tm_bib.dat" Type="None" OriginalPath="KRC:\R1\System\tm_bib.dat" OriginalChecksum="db42a2ad08de6ab63bb986bf174e10df" CurrentChecksum="db42a2ad08de6ab63bb986bf174e10df" />
+        <File OriginalName="tm_bib.src" CurrentName="tm_bib.src" Type="None" OriginalPath="KRC:\R1\System\tm_bib.src" OriginalChecksum="2f9071c7a68f81eb4250bb9101fecffa" CurrentChecksum="2f9071c7a68f81eb4250bb9101fecffa" />
+      </Folder>
+      <Folder OriginalName="TP" CurrentName="TP" Type="None" OriginalPath="KRC:\R1\TP">
+        <Folder OriginalName="BrakeTest" CurrentName="BrakeTest" Type="None" OriginalPath="KRC:\R1\TP\BrakeTest">
+          <File OriginalName="braketestback.dat" CurrentName="braketestback.dat" Type="None" OriginalPath="KRC:\R1\TP\BrakeTest\braketestback.dat" OriginalChecksum="2be433c1bae97fa71255c0b14a4a6e61" CurrentChecksum="2be433c1bae97fa71255c0b14a4a6e61" />
+          <File OriginalName="braketestback.src" CurrentName="braketestback.src" Type="None" OriginalPath="KRC:\R1\TP\BrakeTest\braketestback.src" OriginalChecksum="1105a1910d2186acbeb0e09fa30b6161" CurrentChecksum="1105a1910d2186acbeb0e09fa30b6161" />
+          <File OriginalName="braketestpark.dat" CurrentName="braketestpark.dat" Type="None" OriginalPath="KRC:\R1\TP\BrakeTest\braketestpark.dat" OriginalChecksum="5dec30118cd031a6fb4db9f5d17fec4b" CurrentChecksum="5dec30118cd031a6fb4db9f5d17fec4b" />
+          <File OriginalName="braketestpark.src" CurrentName="braketestpark.src" Type="None" OriginalPath="KRC:\R1\TP\BrakeTest\braketestpark.src" OriginalChecksum="d334eda1c00de2caa83e59f1948cc970" CurrentChecksum="d334eda1c00de2caa83e59f1948cc970" />
+          <File OriginalName="braketestreq.dat" CurrentName="braketestreq.dat" Type="None" OriginalPath="KRC:\R1\TP\BrakeTest\braketestreq.dat" OriginalChecksum="6f0a04a9659117a01af963a3fe4e8b3b" CurrentChecksum="6f0a04a9659117a01af963a3fe4e8b3b" />
+          <File OriginalName="braketestreq.src" CurrentName="braketestreq.src" Type="None" OriginalPath="KRC:\R1\TP\BrakeTest\braketestreq.src" OriginalChecksum="84d1412b62caea9b4d734e7a654570a9" CurrentChecksum="84d1412b62caea9b4d734e7a654570a9" />
+          <File OriginalName="BrakeTestSelfTest.dat" CurrentName="BrakeTestSelfTest.dat" Type="None" OriginalPath="KRC:\R1\TP\BrakeTest\BrakeTestSelfTest.dat" OriginalChecksum="55c65f942720886f9781b415c98538f6" CurrentChecksum="55c65f942720886f9781b415c98538f6" />
+          <File OriginalName="BrakeTestSelfTest.src" CurrentName="BrakeTestSelfTest.src" Type="None" OriginalPath="KRC:\R1\TP\BrakeTest\BrakeTestSelfTest.src" OriginalChecksum="2a1af6d6a5a08190448092c8f9ff2302" CurrentChecksum="2a1af6d6a5a08190448092c8f9ff2302" />
+          <File OriginalName="braketeststart.dat" CurrentName="braketeststart.dat" Type="None" OriginalPath="KRC:\R1\TP\BrakeTest\braketeststart.dat" OriginalChecksum="1e78182f98e943111a19d4470b8a47e4" CurrentChecksum="1e78182f98e943111a19d4470b8a47e4" />
+          <File OriginalName="braketeststart.src" CurrentName="braketeststart.src" Type="None" OriginalPath="KRC:\R1\TP\BrakeTest\braketeststart.src" OriginalChecksum="6555beacbd4eba1111ed735e6af7e127" CurrentChecksum="6555beacbd4eba1111ed735e6af7e127" />
+        </Folder>
+        <Folder OriginalName="EthernetKRL" CurrentName="EthernetKRL" Type="None" OriginalPath="KRC:\R1\TP\EthernetKRL" />
+        <Folder OriginalName="Gripper_SpotTech" CurrentName="Gripper_SpotTech" Type="None" OriginalPath="KRC:\R1\TP\Gripper_SpotTech">
+          <File OriginalName="h50.src" CurrentName="h50.src" Type="None" OriginalPath="KRC:\R1\TP\Gripper_SpotTech\h50.src" OriginalChecksum="d554f439785aa5316b857e97482d56f1" CurrentChecksum="d554f439785aa5316b857e97482d56f1" />
+          <File OriginalName="userspot.dat" CurrentName="userspot.dat" Type="None" OriginalPath="KRC:\R1\TP\Gripper_SpotTech\userspot.dat" OriginalChecksum="eac98b47931a393d5f3e923fcd7adc09" CurrentChecksum="eac98b47931a393d5f3e923fcd7adc09" />
+          <File OriginalName="userspot.src" CurrentName="userspot.src" Type="None" OriginalPath="KRC:\R1\TP\Gripper_SpotTech\userspot.src" OriginalChecksum="1da695198353f9a50693d42d5fb7b51c" CurrentChecksum="1da695198353f9a50693d42d5fb7b51c" />
+          <File OriginalName="user_grp.dat" CurrentName="user_grp.dat" Type="None" OriginalPath="KRC:\R1\TP\Gripper_SpotTech\user_grp.dat" OriginalChecksum="6a31f94251dda5e710d1c82bcecc9f81" CurrentChecksum="6a31f94251dda5e710d1c82bcecc9f81" />
+          <File OriginalName="user_grp.src" CurrentName="user_grp.src" Type="None" OriginalPath="KRC:\R1\TP\Gripper_SpotTech\user_grp.src" OriginalChecksum="7cb706f8357cc73c96318fdc88f3e078" CurrentChecksum="7cb706f8357cc73c96318fdc88f3e078" />
+        </Folder>
+        <File OriginalName="p00.dat" CurrentName="p00.dat" Type="None" OriginalPath="KRC:\R1\TP\p00.dat" OriginalChecksum="dbf2a36cc9a284748f79d0f3fce5bb1b" CurrentChecksum="dbf2a36cc9a284748f79d0f3fce5bb1b" />
+        <File OriginalName="p00.src" CurrentName="p00.src" Type="None" OriginalPath="KRC:\R1\TP\p00.src" OriginalChecksum="ead0efefbde68dcceac4e3479ab671eb" CurrentChecksum="ead0efefbde68dcceac4e3479ab671eb" />
+        <File OriginalName="signals.dat" CurrentName="signals.dat" Type="None" OriginalPath="KRC:\R1\TP\signals.dat" OriginalChecksum="7c23e2e5347474611b59961e02dba2f0" CurrentChecksum="7c23e2e5347474611b59961e02dba2f0" />
+      </Folder>
+      <File OriginalName="cell.src" CurrentName="cell.src" Type="None" OriginalPath="KRC:\R1\cell.src" OriginalChecksum="3e132389c72da99a3bf85da49dd451c8" CurrentChecksum="3e132389c72da99a3bf85da49dd451c8" />
+    </Folder>
+    <Folder OriginalName="STEU" CurrentName="STEU" Type="None" OriginalPath="KRC:\STEU">
+      <Folder OriginalName="Mada" CurrentName="Mada" Type="None" OriginalPath="KRC:\STEU\Mada">
+        <File OriginalName="$custom.dat" CurrentName="$custom.dat" Type="None" OriginalPath="KRC:\STEU\Mada\$custom.dat" OriginalChecksum="d1390e613f5b23ec82b9edc3437f9678" CurrentChecksum="d1390e613f5b23ec82b9edc3437f9678" />
+        <File OriginalName="$machine.dat" CurrentName="$machine.dat" Type="None" OriginalPath="KRC:\STEU\Mada\$machine.dat" OriginalChecksum="d760dddba3f5a3a8f5595976954fddf5" CurrentChecksum="d760dddba3f5a3a8f5595976954fddf5" />
+        <File OriginalName="$option.dat" CurrentName="$option.dat" Type="None" OriginalPath="KRC:\STEU\Mada\$option.dat" OriginalChecksum="7ff7b0710d74bfc21b60d9780a30e046" CurrentChecksum="7ff7b0710d74bfc21b60d9780a30e046" />
+      </Folder>
+      <File OriginalName="$config.dat" CurrentName="$config.dat" Type="None" OriginalPath="KRC:\STEU\$config.dat" OriginalChecksum="e0a7176a2b6d88e5b5b70c49d97c9c96" CurrentChecksum="e0a7176a2b6d88e5b5b70c49d97c9c96" />
+    </Folder>
+  </Folder>
+</Folder>

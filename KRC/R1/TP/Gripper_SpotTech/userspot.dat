@@ -1,0 +1,10 @@
+&ACCESS R1
+DEFDAT  USERSPOT
+;********************************
+; USERSPOT - Package KR C2
+; V5.0
+; Date: 23.03.98 
+; 
+;********************************
+
+ENDDAT

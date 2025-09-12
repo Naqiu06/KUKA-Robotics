@@ -1,0 +1,240 @@
+&ACCESS RVP
+&REL 2
+&PARAM DISKPATH = KRC:\R1\Program
+DEF honai( )
+;FOLD INI;%{PE}
+  ;FOLD BASISTECH INI
+    GLOBAL INTERRUPT DECL 3 WHEN $STOPMESS==TRUE DO IR_STOPM ( )
+    INTERRUPT ON 3 
+    BAS (#INITMOV,0 )
+  ;ENDFOLD (BASISTECH INI)
+;FOLD SPOTTECH INI
+USERSPOT(#INIT)
+;ENDFOLD (SPOTTECH INI)
+;FOLD GRIPPERTECH INI
+USER_GRP(0,DUMMY,DUMMY,GDEFAULT)
+;ENDFOLD (GRIPPERTECH INI)
+  ;FOLD USER INI
+    ;Make your modifications here
+  ;ENDFOLD (USER INI)
+;ENDFOLD (INI)
+
+;FOLD PTP HOME Vel=100 % DEFAULT;%{PE}%R 8.3.38,%MKUKATPBASIS,%CMOVE,%VPTP,%P 1:PTP, 2:HOME, 3:, 5:100, 7:DEFAULT
+$BWDSTART=FALSE
+PDAT_ACT=PDEFAULT
+FDAT_ACT=FHOME
+BAS(#PTP_PARAMS,100)
+$H_POS=XHOME
+;SPTP XHOME 
+;ENDFOLD
+
+SPTP $AXIS_ACT
+
+; $APO.CDIS = 10 ; allow 10 mm distance with C_DIS
+
+; User manually positions the robot over the first stack
+;HALT ; Pause for manual positioning
+;WAIT FOR $FLAG[1] ; Wait indefinitely until user pushes bottom button
+
+; Read the current height
+currentHeight = $POS_ACT.Z ; Reading the current Z position of the robot
+
+; Calculate the number of blocks based on the height
+n = ((currentHeight - actualBasePos[1].Z) / blockHeight) ; Number of blocks
+
+
+;n= 3 ;number of blocks
+totalMoves= exp(2, n) - 1 ;for n number of blocks
+
+; Initializing the stacks
+
+intToChar[1] = "1"
+intToChar[2] = "2"
+intToChar[3] = "3"
+intToChar[4] = "4"
+intToChar[5] = "5"
+intToChar[6] = "6"
+intToChar[7] = "7"
+intToChar[8] = "8"
+intToChar[9] = "9"
+intToChar[10] = " "
+
+; Initialize stack[1] based on number of blocks
+FOR moveB = 1 TO n
+   stack[1].block[moveB] = intToChar[n-moveB+1]
+ENDFOR
+
+stack[1].fill = n
+stack[2].fill = 0
+stack[3].fill = 0
+
+srcPos=1
+auxPos=2
+destPos=3
+
+FOR moveB = 1 TO totalMoves
+   IF(mod(moveB, 3) == 0) THEN
+      swapDisks(auxPos, destPos)
+   ELSE
+      IF (mod(moveB, 3) == 1) THEN
+         swapDisks(srcPos, destPos)
+      ELSE
+         swapDisks(srcPos, auxPos)
+      ENDIF
+   ENDIF
+ENDFOR
+
+;FOLD PTP HOME  Vel= 100 % DEFAULT;%{PE}%MKUKATPBASIS,%CMOVE,%VPTP,%P 1:PTP, 2:HOME, 3:, 5:100, 7:DEFAULT
+$BWDSTART = FALSE
+PDAT_ACT=PDEFAULT
+FDAT_ACT=FHOME
+BAS (#PTP_PARAMS,100 )
+$H_POS=XHOME
+SPTP  XHOME
+;ENDFOLD
+
+END
+
+; Gripper closing and openning actions
+DEF GRIPPER_OPEN()
+   H50(GRP_APO,1,1,GCONT)
+END
+DEF GRIPPER_CLOSE()
+   H50(GRP_APO,1,2,GCONT)
+   WAIT SEC 0.3
+END
+
+
+DEFFCT INT exp(a:IN, b:IN)
+   DECL INT a, b, i, temp, result
+   
+   result = a
+   
+   IF b > 1 THEN
+      FOR i=2 TO b
+         result = result * a
+      ENDFOR
+   ELSE
+      IF b == 0 THEN
+         result = 1
+      ENDIF
+   ENDIF
+   
+   RETURN result
+ENDFCT
+
+DEFFCT INT mod(a:IN, b:IN)
+   DECL INT a
+   DECL INT b
+   DECL INT result
+   result = a - (b*(a/b))
+   return result
+
+ENDFCT
+
+DEFFCT FRAME calcTopPos(basePos:IN, height:IN)
+   DECL FRAME basePos
+   DECL FRAME topPos
+   DECL INT height
+   
+   topPos = basePos
+   topPos.Z = basePos.Z + (height * blockHeight)
+
+   
+   RETURN topPos
+ENDFCT
+
+; Function to pick blocks
+DEF pickBlock(fromStack:IN)
+   DECL INT fromStack
+   
+   SPTP basePos[fromStack] C_DIS
+   SLIN calcTopPos(actualBasePos[fromStack], stack[fromStack].fill - 1)
+   ;WAIT SEC 1
+   GRIPPER_CLOSE()
+   ;WAIT SEC 1
+   SLIN basePos[fromStack] C_DIS
+   IF stack[fromStack].fill > 0 THEN
+      stack[fromStack].block[stack[fromStack].fill] = " "
+      stack[fromStack].fill = stack[fromStack].fill - 1
+   ENDIF
+END
+
+; Function to place blocks
+DEF placeBlock(toStack:IN)
+   DECL INT toStack
+   
+   SPTP basePos[toStack] C_DIS
+   SLIN calcTopPos(actualBasePos[toStack], stack[toStack].fill)
+   GRIPPER_OPEN();
+   SLIN basePos[toStack] C_DIS
+   
+   stack[toStack].fill = stack[toStack].fill + 1
+END
+
+DEF performMove(fromPos:IN, toPos:IN)
+   DECL INT fromPos
+   DECL INT toPos
+   DECL CHAR blocksize
+   blocksize = stack[fromPos].block[stack[fromPos].fill]
+   pickBlock(fromPos)
+   placeBlock(toPos)
+   stack[toPos].block[stack[toPos].fill] = blocksize
+END
+
+DEF swapDisks(fromStack:IN, toStack:IN)
+   DECL INT fromStack
+   DECL INT toStack
+   DECL BOOL fromisempty
+   DECL BOOL toisempty
+   DECL BOOL lowerisbigger
+   DECL INT lowerblocksize
+   DECL INT upperblocksize
+   
+   
+   ;debugFrom = fromStack
+   ;debugTo = toStack
+   toisempty = stack[toStack].fill == 0
+   fromisempty = stack[fromStack].fill == 0
+   lowerisbigger = FALSE
+   if (not toisempty and not fromisempty) then
+      lowerblocksize = stack[fromStack].block[stack[fromStack].fill]
+      upperblocksize = stack[toStack].block[stack[toStack].fill]
+      lowerisbigger = lowerblocksize < upperblocksize
+   endif
+   
+   IF (toisempty OR (not fromisempty AND lowerisbigger)) THEN
+      performMove(fromStack, toStack)
+   ELSE
+      performMove(toStack, fromStack)
+   ENDIF
+END
+
+
+;DEFFCT INT userInput()
+;   DECL CHAR msg[80]
+;   DECL CHAR SK[1]
+;   DECL CHAR sk_txt[2, 80]
+ ;  DECL CHAR par[10]
+ ;  DECL INT nHandle, keyNumber, userNumber
+;   BOOL opt
+   
+;   msg[] = "Enter the number of blocks: "
+;   SK[1] ={sk_type #value, sk_txt[] "Submit"}
+   
+;   nHandle = SET_KRLDLG(msg[], par[], SK[], opt[])
+   
+;   IF (nHandle > 0) THEN
+;      WHILE (Exists_KRLDLG(nHandle, keyNumber))
+;         WAIT SEC 0.1
+;      ENDWHILE
+      
+;      IF (keyNumber == 1) THEN
+;         userNumber = StrToInt(par[1])
+;         HALT
+;      ENDIF
+;      ELSE
+;         HALT
+;      ENDIF
+;      RETURN userNumber
+;ENDFCT

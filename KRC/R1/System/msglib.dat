@@ -1,0 +1,6 @@
+&ACCESS R2
+DEFDAT  MsgLib PUBLIC
+
+DECL INT lnHandle=0
+
+ENDDAT 

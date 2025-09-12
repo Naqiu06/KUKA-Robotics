@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Connections>
+  <Connection Type="KukaRoboter.WorkOnline.Connections.KrcConnectionTarget" ConnectionString="S-1-5-21-2090570770-2027053368-1598389713;KUKA;192.168.1.15;KUKA;V8.3.20.137;KR C;Options:EthernetKRL,2.2.9.156|Gripper-&amp;SpotTech,3.2.2.76|RemoteService,1.2.0.2" LastActive="true" />
+</Connections>
